@@ -12,10 +12,9 @@ namespace ConsoleApplication2
         static void Main(string[] args)
         {
             House one = new House();
-            one.Do();
-            one.Do();
-            
-            one.Show();
+            Team builders = new Team();
+            builders.Engage(one);
+            builders.Engage(one);
         }
     }
 }

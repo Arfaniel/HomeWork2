@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using ConsoleApplication2.Interfaces;
 
 namespace ConsoleApplication2.Classes
 {
-    class Worker : IWorker
+    public class Worker : IWorker
     {
-        public void Work()
+        public void Work(House obj)
         {
             Console.WriteLine("I am working");
+            obj.Build(obj.Project[0]);
+            Thread.Sleep(1000);
+            Console.WriteLine("I am done");
         }
     }
 }

@@ -7,11 +7,20 @@ using ConsoleApplication2.Interfaces;
 
 namespace ConsoleApplication2.Classes
 {
-    class TeamLeader : IWorker
+    public class TeamLeader : IWorker
     {
-        public void Work()
+        public void Work(House obj)
         {
-            
+            if(obj.partCounter>0)
+            {
+                Console.WriteLine("IS DONE:");
+                obj.Show();
+            }
+            Console.WriteLine("TODO:");
+            for (int i = 0; i < obj.Project.Count; i++)
+            {
+                Console.WriteLine(obj.Project[i]);
+            }
         }
     }
 }

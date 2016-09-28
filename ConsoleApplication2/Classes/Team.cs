@@ -4,10 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ConsoleApplication2.Classes
 {
-    class Team
+    public class Team
     {
-        public object[] members = new object[3];
+        TeamLeader one = new TeamLeader();
+        Worker two = new Worker();
+        public void Engage(House obj)
+        {
+           one.Work(obj);
+           two.Work(obj);
+        }
     }
 }

@@ -7,12 +7,12 @@ using ConsoleApplication2.Interfaces;
 
 namespace ConsoleApplication2.Classes
 {
-    class House: IPart
+    public class House: IPart
     {
-        private object[] parts = new object[11];
-        private int partCounter = 0;
-        private List<string> Project = new List<string> { "Basement", "Wall", "Wall", "Wall", "Wall", "Window", "Door", "Roof" };
-        private void Build(string somepart)
+        public object[] parts = new object[11];
+        public int partCounter = 0;
+        public List<string> Project = new List<string> { "Basement", "Wall", "Wall", "Wall", "Wall", "Window", "Door", "Roof" };
+        public void Build(string somepart)
         {
             if (partCounter <= parts.Length)
             {
@@ -54,9 +54,12 @@ namespace ConsoleApplication2.Classes
         {
             Build(Project[partCounter]);
         }
-        public string Show()
+        public void Show()
         {
-                return parts.ToString();
+            for (int i = 0; i < partCounter; i++)
+            {
+                Console.WriteLine(parts[i]);
+            }
         }
         public bool isDone()
         {
